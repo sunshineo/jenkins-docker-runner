@@ -14,7 +14,7 @@ This project is very simple. It does the following things:
 3. Install openssh-server and expose port 22 for Jenkins to ssh
 
 ### Runtime (entrypoint.sh)
-1. Create a user jenkins and add it to the group 'docker' so that user can run docker
+1. Create a user 'jenkins' and add it to the group 'docker' so that user can run docker. You can provide a ENV called JENKINS_PASSWORD to change the password. Default password is 'jenkins'
 2. Start openssh-server
 3. Start docker engine
 4. If ENV variable $DOCKER_USERNAME and $DOCKER_PASSWORD are provided, it will login with that user. So that it can pull private docker images.
