@@ -19,7 +19,8 @@ else
 	echo "DOCKER_USERNAME set. Will try to login to docker as $DOCKER_USERNAME"
 	echo "Wait 5 seconds to make sure docker daemon is started. Otherwise login will fail"
 	sleep 5
-	docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
+	echo "Swtich to user jenkins to login"
+	su - jenkins -c "docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD"
 fi
 
 exec "$@"
