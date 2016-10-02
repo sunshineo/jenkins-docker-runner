@@ -18,7 +18,7 @@ This project is very simple. It does the following things:
 2. Start openssh-server
 3. Start docker engine
 4. If ENV variable $DOCKER_USERNAME and $DOCKER_PASSWORD are provided, it will login with that user. So that it can pull private docker images.
-5. execute CMD (If not provided on command line, it uses base image ubuntu:16.04 CMD, which is /bin/bash)
+5. execute CMD (If not provided on command line, it will tail docker engine log)
 
 #**IMPORTANT**: MUST USE --privileged
 Here is an example run command:
