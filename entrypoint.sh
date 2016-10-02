@@ -11,14 +11,14 @@ echo "jenkins:$JENKINS_PASSWORD" | chpasswd
 
 # start docker engin
 service docker start
-# Wait for daemon to start or login will fail
-sleep 5
 
 if [ -z "$DOCKER_USERNAME" ];
 then
-	echo "No docker username set. Will not login to docker. Will only be able to pull public images."
+	echo "No docker DOCKER_USERNAME set. Will not login to docker. Will only be able to pull public images."
 else
-	echo "Will try to login to docker as $DOCKER_USERNAME"
+	echo "DOCKER_USERNAME set. Will try to login to docker as $DOCKER_USERNAME"
+	echo "Wait 5 seconds to make sure docker daemon is started. Otherwise login will fail"
+	sleep 5
 	docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
 fi
 
