@@ -22,4 +22,6 @@ ADD ./entrypoint.sh /
 ENV JENKINS_PASSWORD jenkins
 ENTRYPOINT ["/entrypoint.sh"]
 
+VOLUME /var/lib/docker
+
 CMD ["tail", "-f", "/var/log/docker.log"]
